@@ -1,4 +1,4 @@
-package alfredBot;
+
 import java.util.Date;
 
 public class AlfredQuotes {
@@ -16,12 +16,23 @@ public class AlfredQuotes {
     public String dateAnnouncement() {
         // YOUR CODE HERE
         Date currentDate = new Date();
-        return String.format("It is currently %t", currentDate);
+        return String.format("It is currently %s", currentDate);
     }
     
     public String respondBeforeAlexis(String conversation) {
-        // YOUR CODE HERE
-        return "for snarky response return string";
+        //creating a snarky response
+        String snarkyResponse = "Of course! Please forgive her she can only understand the simplest of things";
+        //creating Alfred's response
+        String alfredResponse = "Why certainly sir! Your wish is my command!";
+        if(conversation.indexOf("Alexis") >= 0){
+            return snarkyResponse;
+        }
+        if(conversation.indexOf("Alfred") >= 0){
+            return alfredResponse;
+        }
+        else{
+            return "Well with that I bid you goodbye and if you shall require my help please dont hesitate to call on Alfred";
+        }
     }
     
 	// NINJA BONUS
